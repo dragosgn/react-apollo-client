@@ -4,12 +4,11 @@ import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
+import { BASE_URL } from "./utils";
 
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
-const BASE_URL = "http://localhost:8080/graphql";
 
 const httpLink = new HttpLink({
   uri: BASE_URL
