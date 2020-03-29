@@ -44,3 +44,5 @@ const HippieBox = styled.div`
   margin: 1rem 0;
   color: green;
 `;
+
+// https://www.robinwieruch.de/react-graphql-apollo-tutorial/
