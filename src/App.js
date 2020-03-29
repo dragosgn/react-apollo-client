@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <div>Here are the OldSchool:</div>
       <OldSchool />
-      <div>Here are the Hipsters:</div>
       <br />
+      <div>Here are the Hipsters:</div>
       <Hipsters />
     </div>
   );

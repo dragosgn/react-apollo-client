@@ -1,6 +1,7 @@
 import React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+
 import { DevelopersBox } from "./styled";
 
 const GET_HIPSTERS = gql`
