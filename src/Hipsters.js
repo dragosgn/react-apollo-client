@@ -20,14 +20,15 @@ const Hipsters = () => (
         return <div>Loading ...</div>;
       }
 
-      const { users: hipsters } = data;
+      const { users } = data;
 
-      if (!hipsters) {
+      if (!users) {
         return null;
       }
+
       return (
         <div>
-          {hipsters.map(hip => (
+          {users.map(hip => (
             <DevelopersBox key={hip.id}>{hip.username}</DevelopersBox>
           ))}
         </div>

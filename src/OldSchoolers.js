@@ -4,37 +4,22 @@ import axios from "axios";
 import { DevelopersBox } from "./styled";
 import { BASE_URL } from "./utils";
 
-const GET_OLDSCHOOL = `
-  {
-    users {
-      id
-      username
-    }
-  }
-`;
-
-const axiosGraphQL = axios.create({
-  baseURL: BASE_URL
-});
-
-export default class OldSchool extends Component {
+class OldSchool extends Component {
   constructor(props) {
     super(props);
 
-    this.onFetchFromGitHub = this.onFetchFromGitHub.bind(this);
+    this.onFetchGitHub = this.onFetchGitHub.bind(this);
 
     this.state = { users: [] };
   }
 
   async componentDidMount() {
-    const {
-      data: { users }
-    } = await this.onFetchFromGitHub();
+    const response = await this.onFetchGitHub();
 
-    this.setState({ users: users });
+    this.setState({ users: response.data.users });
   }
 
-  onFetchFromGitHub = () => {
+  onFetchGitHub = () => {
     return axiosGraphQL
       .post("", { query: GET_OLDSCHOOL })
       .then(result => result.data);
@@ -55,3 +40,18 @@ export default class OldSchool extends Component {
     );
   }
 }
+
+export default OldSchool;
+
+const GET_OLDSCHOOL = `
+  {
+    users {
+      id
+      username
+    }
+  }
+`;
+
+const axiosGraphQL = axios.create({
+  baseURL: BASE_URL
+});
