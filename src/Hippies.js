@@ -39,7 +39,8 @@ export default Hippies;
 
 const HippieBox = styled.div`
   padding: 0.5rem;
-  border: 1px solid orangered;
+  border: 1px solid orange;
   border-radius: 6px;
   margin: 1rem 0;
+  color: green;
 `;
